@@ -1,34 +1,21 @@
-/**
- *
- * <div id="parent">
- *      <div id="child">
- *         <h1>I'm h1 tag</h1>
- *         <h2>I'm h1 tag</h2>
- *      </div>
- * <div id="child2">
- *         <h1>I'm h1 tag</h1>
- *         <h2>I'm h1 tag</h2>
- *      </div>
- * </div>
- *
- * ReactElement(Object) => HTML(Browser Understands)
- */
+import React from "react";
+import ReactDOM from "react-dom/client"
 
-const parent = React.createElement("div", { id: "parent" }, [
-    React.createElement("div", { id: "child" }, [
-        React.createElement("h1", {}, "I'm an h1 tag"),
-        React.createElement("h2", {}, "I'm an h2 tag"),
-    ]),
-    React.createElement("div", { id: "child2" }, [
-        React.createElement("h1", {}, "I'm an h1 tag"),
-        React.createElement("h2", {}, "I'm an h2 tag"),
-    ]),
-]);
+const heading = <h1>Namaste react from jsx</h1>
 
-//JSX
+//React functional components
 
-console.log(parent); // object
-
+const Title = () => {
+    return <h2>Navbar for nav items</h2>
+}
+const HeadingComponent = () => {
+    return (
+        <div id="container">
+            <Title />
+            <h4>Namaste react functional components</h4>
+        </div>
+    )
+}
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(parent);
+root.render(<HeadingComponent />);
