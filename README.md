@@ -45,3 +45,45 @@ dist=> hosted things coming from the dist folder and parcel-cache when we save t
 Lecture - 04
 => Config driven UI: different data with different locations(like discount, offers etc).
 key: whenever we use map function, we have to pass key also to avoid warning. with the use of key, react only render again the newly rescard, not rerendered the whole cards again and again when new rescard is added and we can also use index as the key also.but this is a bad practice.
+
+lecture - 05
+Two types of Improt/Exports:
+
+default export is used when we have to export only one thing(component etc) and named export are used when we have to export multiple things(components etc) For Eg in file constants.js.
+=> for named export we use export keyword in front of function or component that we want to export.
+
+The name of imported module has to be the same as the name of the exported module. In Named export, the component is exported from MyComponent.js file like:
+
+export const MyComponent = () => {}
+export const MyComponent2 = () => {}
+and the component is imported from MyComponent.js file like: here we must use {} in MyComponent.
+// ex. importing a single named export
+import { MyComponent } from "./MyComponent";
+
+// ex. importing multiple named exports
+import { MyComponent, MyComponent2 } from "./MyComponent";
+
+// ex. giving a named import a different name by using "as":
+import { MyComponent2 as MyNewComponent } from "./MyComponent";
+
+In _ as export, it is used to import the whole module as a component and access the components inside the module. In _ as export, the component is exported from MyComponent.js file like:
+
+export const MyComponent = () => {}
+export const MyComponent2 = () => {}
+export const MyComponent3 = () => {}
+and the component is imported from MyComponent.js file like:
+
+import \* as MainComponents from "./MyComponent";
+Now we can use them in JSX as:
+
+<MainComponents.MyComponent />
+<MainComponents.MyComponent2 />
+<MainComponents.MyComponent3 />
+We can use Named export and Default export together. So you should export like:
+
+export const MyComponent2 = () => {}
+const MyComponent = () => {}
+export default MyComponent;
+and import like:
+
+import MyComponent, {MyComponent2} from "./MyComponent";

@@ -1,28 +1,3 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-
-const Heading = () => {
-  return (
-    <div className="header">
-      <div className="logo-container">
-        <img
-          className="logo"
-          src="https://cdn.logojoy.com/wp-content/uploads/2018/05/01105923/1_big8.png"
-        />
-      </div>
-      <div className="nav-items">
-        <ul>
-          <li>Home</li>
-          <li>About Us</li>
-          <li>Contact Us</li>
-          <li>Cart</li>
-        </ul>
-      </div>
-    </div>
-  );
-};
-
-// RestaurantList is JSON Data for displaying cards
 const restaurantList = [
   {
     type: "restaurant",
@@ -1841,57 +1816,4 @@ const restaurantList = [
   },
 ];
 
-const RestaurantCard = (props) => {
-  const { resData } = props;
-
-  const {
-    name,
-    cuisines,
-    avgRating,
-    costForTwo,
-    deliveryTime,
-    cloudinaryImageId,
-  } = resData?.data;
-  // console.log(props);
-  return (
-    <div className="res-card" style={{ backgroundColor: "#f0f0f0" }}>
-      <img
-        className="res-logo"
-        src={
-          "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" +
-          cloudinaryImageId
-        }
-      />
-      <h3>{name}</h3>
-      <h4>{cuisines.join(", ")}</h4>
-      <h4>{avgRating}</h4>
-      <h4>{costForTwo / 100} FOR TWO</h4>
-      <h4>{deliveryTime}</h4>
-    </div>
-  );
-};
-
-const Body = () => {
-  return (
-    <div className="body">
-      <div className="search">Search</div>
-      <div className="res-container">
-        {restaurantList.map((restaurant) => (
-          <RestaurantCard key={restaurant.data.id} resData={restaurant} />
-        ))}
-      </div>
-    </div>
-  );
-};
-
-const AppLayout = () => {
-  return (
-    <div className="app">
-      <Heading />
-      <Body />
-    </div>
-  );
-};
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<AppLayout />);
+export default restaurantList;
