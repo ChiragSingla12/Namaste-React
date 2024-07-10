@@ -46,8 +46,9 @@ Lecture - 04
 => Config driven UI: different data with different locations(like discount, offers etc).
 key: whenever we use map function, we have to pass key also to avoid warning. with the use of key, react only render again the newly rescard, not rerendered the whole cards again and again when new rescard is added and we can also use index as the key also.but this is a bad practice.
 
-lecture - 05
-Two types of Improt/Exports:
+# lecture - 05
+
+Two types of Import/Exports:
 
 default export is used when we have to export only one thing(component etc) and named export are used when we have to export multiple things(components etc) For Eg in file constants.js.
 => for named export we use export keyword in front of function or component that we want to export.
@@ -87,3 +88,31 @@ export default MyComponent;
 and import like:
 
 import MyComponent, {MyComponent2} from "./MyComponent";
+
+# What are React Hooks?
+
+A: In React version 16.8, React introduced a new pattern called Hooks. React Hooks are simple JavaScript functions that we can use to isolate the reusable part from a functional component. Hooks can be stateful and can manage side-effects. Hooks allow you to reuse stateful logic without changing your component hierarchy. This makes it easy to share Hooks among many components or with the community.
+
+React provides a bunch of standard in-built hooks:
+useState: To manage states. Returns a stateful value and an updater function to update it.
+useEffect: To manage side-effects like API calls, subscriptions, timers, mutations, and more.
+useContext: To return the current value for a context.
+useReducer: A useState alternative to help with complex state management.
+useCallback: It returns a memorized version of a callback to help a child component not re-render unnecessarily.
+useMemo: It returns a memoized value that helps in performance optimizations.
+useRef: It returns a ref object with a current property. The ref object is mutable. It is mainly used to access a child component imperatively.
+useLayoutEffect: It fires at the end of all DOM mutations. It's best to use useEffect as much as possible over this one as the useLayoutEffect fires synchronously.
+useDebugValue: Helps to display a label in React DevTools for custom hooks.
+Q: Why do we need useState Hook?
+A: useState hook is used to maintain the state in our React application. It keeps track of the state changes so basically useState has the ability to encapsulate local state in a functional component. The useState hook is a special function that takes the initial state as an argument and returns an array of two entries. UseState encapsulate only singular value from the state, for multiple state need to have useState calls.
+
+Syntax for useState hook
+const [state, setState] = useState(initialstate);
+Importing: To use useState you need to import useState from react as shown below:
+import React, { useState } from "react";
+we can use Hooks in Functional Components
+
+const Example = (props) => {
+// You can use Hooks here!
+return <div />;
+}
