@@ -116,3 +116,11 @@ const Example = (props) => {
 // You can use Hooks here!
 return <div />;
 }
+
+# lecture-06 Exploring the world
+
+useEffect=> first component loads then useeffect will be printed on the console.
+for swiggy api=> on main page, open inspect and select location and copy the api
+("https://www.swiggy.com/dapi/restaurants/list/v5?lat=29.8022231&lng=76.4006237&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING")
+
+=> \*\*\* comopnent is re-render when the state changes of a state variable.
