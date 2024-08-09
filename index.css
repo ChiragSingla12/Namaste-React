@@ -157,7 +157,14 @@ button {
   flex-wrap: wrap;
   gap: 30px;
 }
-
+.shimmer-wrapper {
+  width: 270px;
+  height: 200px;
+  background-color: #f6f7f8;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+}
 .shimmer-card {
   border-radius: 15px;
   width: 300px;
